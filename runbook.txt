@@ -1,0 +1,138 @@
+# Pytch Runbook
+# Pitch Generation & Outreach Automation Engine
+
+## Quick Start
+
+### 1. Configure Email
+```bash
+export PYTCH_EMAIL="your@email.com"
+export PYTCH_EMAIL_PASSWORD="your-app-password"
+# Optional: Custom SMTP server
+export PYTCH_SMTP_SERVER="smtp.gmail.com"
+export PYTCH_SMTP_PORT=587
+```
+
+### 2. Initialize Database
+```bash
+python pytch.py --init
+```
+This creates the SQLite database at `pytch/pytch.db` with tables:
+- campaigns
+- leads
+- outreach
+- deals
+- metrics
+- social_posts
+
+### 3. List Available Wrappers
+```bash
+python pytch_wrapper_campaigns.py --list-wrappers
+```
+Shows all 13+ pitch wrapper modules available.
+
+### 4. Create Campaigns
+```bash
+python pytch_wrapper_campaigns.py --create-campaigns
+```
+Creates a campaign for each wrapper module.
+
+### 5. Generate a Pitch
+```bash
+# Basic pitch
+python pytch_wrapper_campaigns.py --generate-pitch deck_matic
+
+# Pitch for specific persona
+python pytch_wrapper_campaigns.py --generate-pitch brander --persona "Music production schools"
+```
+
+### 6. View Priority Ranking
+```bash
+python pytch_wrapper_campaigns.py --prioritize
+```
+Shows all campaigns ranked by performance.
+
+### 7. Send Outreach Emails
+```bash
+python pytch.py --send-outreach
+```
+Sends pending outreach emails (up to 10 at a time).
+
+### 8. Check Metrics
+```bash
+python pytch.py --metrics
+```
+Display comprehensive metrics dashboard.
+
+## Directory Structure
+Pytch/
+├── pytch.py                      # Main entry point (--init, --send-outreach, --metrics)
+├── pytch_wrapper_campaigns.py    # Wrapper campaign manager
+├── pytch/                        # Database and runtime files
+│   ├── pytch.db                  # SQLite database
+│   └── pytch-pytch.db            # Backup database
+├── syntax_pytch/                 # Core modules
+│   ├── src/
+│   │   └── pytch_modules/        # 13+ wrapper modules
+│   ├── pytch_*.py                # Additional modules
+│   └── pytch.sh                  # Setup script
+├── QUICK_START.md                # Quick reference
+├── docs/                         # Documentation
+├── templates/                    # Email templates
+└── exports/                       # Exported data
+
+## Wrapper Modules
+Available in syntax_pytch/src/pytch_modules/:
+- bluesky_connector: BlueSky social media integration
+- brander: Brand identity generation
+- comms_wrappers: Communication templates
+- dark_arts_detector: Competitive intelligence
+- deck_matic: Pitch deck generation
+- deploy_butler: Deployment automation
+- legal_hacker: Legal document automation
+- psych_engine: Psychological profiling
+- secret_weapons: Advanced outreach strategies
+- social_autonomy: Social media automation
+- social_soldier: Social engagement
+- voice_smith: Voice/podcast content
+- wit_factory: Witty content generation
+
+## Database Schema
+
+### campaigns
+- id, wrapper_name, target_persona, status, emails_sent, replies, demos_booked, deals_closed, revenue, created_at
+
+### leads
+- id, company, contact_name, email, source, industry, pain_points, status, priority, created_at
+
+### outreach
+- id, lead_id, campaign, subject, body, sent_at, opened, replied, reply_content, next_followup
+
+### deals
+- id, lead_id, deal_value, stage, probability, close_date, notes, created_at
+
+### metrics
+- id, date, emails_sent, emails_opened, replies_received, demos_booked, deals_closed, revenue_generated
+
+### social_posts
+- id, platform, content, media_url, scheduled_for, posted_at, engagement_count, status
+
+## Requirements
+- Python 3.8+
+- SQLite3 (included in Python standard library)
+- SMTP email access
+- No other external dependencies
+
+## Environment Variables
+- PYTCH_EMAIL: SMTP username/email
+- PYTCH_EMAIL_PASSWORD: SMTP password/app password
+- PYTCH_SMTP_SERVER: SMTP server (default: smtp.gmail.com)
+- PYTCH_SMTP_PORT: SMTP port (default: 587)
+
+## Notes
+- All data stored locally in SQLite database
+- No cloud dependencies
+- Works offline once configured
+- Email sending requires internet connection
+- Test with --metrics first to verify setup before sending emails
+- Use Gmail app passwords or other SMTP providers
+- Database backup is automatic (pytch-pytch.db)

@@ -1,0 +1,44 @@
+==================================================
+5TR8D0P3 DOCUMENTATION FILE
+SOURCE FILE: test_api_pytch.py
+FULL PATH: /storage/ED7B-AD5A/root_2026/YOU-ARE-HERE/Unfinished-Projects/Pytch/pytch_saas_backup/test_api_pytch.py
+==================================================
+
+[INTENT AND PURPOSE (THE FEET)]
+Mock DB connection and cursor
+Mock data: 10 sent, 2 replied
+First query: COUNT(*) FROM outreach -> 10
+Second query: COUNT(*) FROM outreach WHERE replied = 1 -> 2
+
+[FUNCTIONAL BREAKDOWN]
+
+--- def test_get_metrics(mock_sqlite):
+Mock DB connection and cursor
+mock_conn = MagicMock()
+mock_cursor = MagicMock()
+mock_sqlite.connect.return_value = mock_conn
+mock_conn.cursor.return_value = mock_cursor
+
+Mock data: 10 sent, 2 replied
+First query: COUNT(*) FROM outreach -> 10
+Second query: COUNT(*) FROM outreach WHERE replied = 1 -> 2
+mock_cursor.fetchone.side_effect = [(10,), (2,)]
+
+response = client.get("/metrics")
+
+assert response.status_code == 200
+assert response.json() == {
+"emails_sent": 10,
+"emails_replied": 2,
+"reply_rate": 20.0
+}
+
+@patch("main.pytch.send_pending_outreach")
+def test_trigger_outreach(mock_send_outreach):
+mock_send_outreach.return_value = 5
+
+response = client.post("/send-outreach")
+
+assert response.status_code == 200
+assert response.json() == {"emails_sent": 5, "message": "Outreach process started"}
+mock_send_outreach.assert_called_once()

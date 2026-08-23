@@ -1,0 +1,66 @@
+{
+  "psychological_pricing": {
+    "charm_pricing": [
+      "$997",
+      "$197",
+      "$47",
+      "$19.97"
+    ],
+    "decoy_effect": [
+      "Basic: $49 | Pro: $97 (BEST VALUE) | Enterprise: $497",
+      "Starter: $29 | Growth: $79 (RECOMMENDED) | Scale: $199"
+    ],
+    "anchoring": [
+      "WAS $1997 | NOW $497 (75% OFF LIMITED TIME)",
+      "COMPARABLE VALUE $3000 | OUR PRICE $997"
+    ],
+    "scarcity_engine": [
+      "Only 6 spots left at this price",
+      "Price increases after next {random.randint(3,10)} customers",
+      "Limited: Founder's discount expires in 48 hours"
+    ]
+  },
+  "relationship_building": {
+    "name": "The Social Proof Engine",
+    "steps": [
+      "Like/comment on their content for 1 week",
+      "Share their work with your audience",
+      "Tag them in relevant content you create",
+      "Ask for small favor (creates investment)"
+    ]
+  },
+  "growth_loopholes": [
+    "Affiliate stacking: Combine multiple affiliate programs for same product",
+    "Content repurposing: Turn one piece of content into 20+ formats automatically",
+    "API arbitrage: Resell tech data through value-added services"
+  ],
+  "credibility_tactics": [
+    "Create case studies from beta testers (even if free)",
+    "Leverage 'as featured in' with any minor mention",
+    "Build social proof through curated testimonials",
+    "Use numbers strategically: 'Used by 500+ developers' (count signups)",
+    "Create 'partner' logos from any company you've interacted with"
+  ],
+  "conversion_triggers": {
+    "curiosity_gaps": [
+      "The one thing VCs look for that has nothing to do with your product...",
+      "Why 90% of developers get this wrong (and how to be in the 10%)...",
+      "The secret our competitors don't want you to know..."
+    ],
+    "social_proof": [
+      "Join 1,247 developers who've automated their business...",
+      "Used by teams at [similar companies] to [achievement]...",
+      "The method that helped [case study] 10x their revenue..."
+    ],
+    "authority": [
+      "Based on 5 years of data from 10,000+ startup pitches...",
+      "Using principles from [famous book/person] applied to [your niche]...",
+      "The same framework used by [successful company] for [result]..."
+    ]
+  },
+  "funding_hacks": [
+    "FOMO engineering: Create artificial scarcity in funding round",
+    "The vision multiplier: Frame current traction as proof of much bigger vision",
+    "The 'oversubscribed' illusion: Tell investors you're limiting round size"
+  ]
+}

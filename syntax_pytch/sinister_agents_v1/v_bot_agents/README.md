@@ -1,0 +1,6 @@
+# v_bot_agents
+
+## Type: PaaS
+
+## API Key Management
+- Store keys in .env (DO NOT COMMIT).

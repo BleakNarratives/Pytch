@@ -1,0 +1,101 @@
+==================================================
+5TR8D0P3 DOCUMENTATION FILE
+SOURCE FILE: main.py
+FULL PATH: /storage/ED7B-AD5A/root_2026/YOU-ARE-HERE/Unfinished-Projects/Pytch/pytch_saas_backup/main.py
+==================================================
+
+[INTENT AND PURPOSE (THE FEET)]
+Mount static files
+Use pytch DB constant
+Get total emails sent
+Get replied emails
+Calculate reply rate
+
+[FUNCTIONAL BREAKDOWN]
+
+--- def read_root():
+Use pytch DB constant
+conn = sqlite3.connect(pytch.DB_NAME)
+cursor = conn.cursor()
+
+Get total emails sent
+cursor.execute('SELECT COUNT(*) FROM outreach')
+total_sent = cursor.fetchone()[0]
+
+Get replied emails
+cursor.execute('SELECT COUNT(*) FROM outreach WHERE replied = 1')
+total_replied = cursor.fetchone()[0]
+
+conn.close()
+
+Calculate reply rate
+reply_rate = (total_replied / total_sent * 100) if total_sent > 0 else 0.0
+
+return {
+"emails_sent": total_sent,
+"emails_replied": total_replied,
+"reply_rate": reply_rate
+}
+
+@app.post("/send-outreach")
+def trigger_outreach():
+count = pytch.send_pending_outreach()
+return {"message": "Outreach process started", "emails_sent": count}
+
+--- def serve_dashboard():
+Use pytch DB constant
+conn = sqlite3.connect(pytch.DB_NAME)
+cursor = conn.cursor()
+
+Get total emails sent
+cursor.execute('SELECT COUNT(*) FROM outreach')
+total_sent = cursor.fetchone()[0]
+
+Get replied emails
+cursor.execute('SELECT COUNT(*) FROM outreach WHERE replied = 1')
+total_replied = cursor.fetchone()[0]
+
+conn.close()
+
+Calculate reply rate
+reply_rate = (total_replied / total_sent * 100) if total_sent > 0 else 0.0
+
+return {
+"emails_sent": total_sent,
+"emails_replied": total_replied,
+"reply_rate": reply_rate
+}
+
+@app.post("/send-outreach")
+def trigger_outreach():
+count = pytch.send_pending_outreach()
+return {"message": "Outreach process started", "emails_sent": count}
+
+--- def get_metrics():
+Use pytch DB constant
+conn = sqlite3.connect(pytch.DB_NAME)
+cursor = conn.cursor()
+
+Get total emails sent
+cursor.execute('SELECT COUNT(*) FROM outreach')
+total_sent = cursor.fetchone()[0]
+
+Get replied emails
+cursor.execute('SELECT COUNT(*) FROM outreach WHERE replied = 1')
+total_replied = cursor.fetchone()[0]
+
+conn.close()
+
+Calculate reply rate
+reply_rate = (total_replied / total_sent * 100) if total_sent > 0 else 0.0
+
+return {
+"emails_sent": total_sent,
+"emails_replied": total_replied,
+"reply_rate": reply_rate
+}
+
+@app.post("/send-outreach")
+def trigger_outreach():
+count = pytch.send_pending_outreach()
+return {"message": "Outreach process started", "emails_sent": count}

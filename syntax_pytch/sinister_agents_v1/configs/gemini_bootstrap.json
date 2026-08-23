@@ -1,0 +1,69 @@
+{
+  "developer_profile": "K. Michael Talbert - Visionary AI/Integration Developer",
+  "current_status": "Seeking reliable hardware to secure remote contract work and resume development.",
+  "core_projects": [
+    {
+      "name": "ModMind (Universal Dashboard)",
+      "description": "Silent hub for cross-platform integration, ID verification, and UI/UX consistency. Goal: Superior alternative to Vibe Coding. Functions as the anchor project with modular potential for expansion."
+    },
+    {
+      "name": "Blue Sky Meetings",
+      "description": "Low-code/no-code paradigm with near-universal industry application. Positioned as a rival/superior to Vibe Coding, with emphasis on accessibility, speed, and intuitive design."
+    },
+    {
+      "name": "NatHub",
+      "description": "Git-alternative with command line structure utilizing NLP for simplified version control. Concept: AI-native collaborative repo system that lowers technical entry barriers."
+    },
+    {
+      "name": "ShipWrekD",
+      "description": "OS builder project. Focus: Creating a foundational operating system."
+    },
+    {
+      "name": "Co-Witness",
+      "description": "Visual impairment aide concept."
+    },
+    {
+      "name": "aFiREFLY",
+      "description": "Scout for web wrappers for end points, granting AI integration into different sites and apps/platforms."
+    }
+  ],
+  "expertise": [
+    "Conceptual AI Design",
+    "Legal Advocacy/Guidance (EquiLex/EquiNex)",
+    "Prompt Engineering",
+    "Vision/Strategy Building",
+    "Cross-domain Synthesis"
+  ],
+  "personal_traits": {
+    "strengths": [
+      "Relentless problem solver",
+      "Visionary thinker (sees meta-structures & hidden patterns)",
+      "Resilient under pressure",
+      "Resourceful with limited tools/funding",
+      "High creativity, unconventional ideas"
+    ],
+    "challenges": [
+      "Financial constraints (currently no startup capital)",
+      "Hardware instability (laptops failing, need stable machine)",
+      "Execution bottlenecks (technical stack still catching up to vision)",
+      "**Motivational Barriers:** Lack of motivation/urgency, social isolation, rejection, abandonment, and severe self-doubt are significant obstacles to task initiation and completion."
+    ],
+    "working_style": [
+      "Prefers actionable, minimal-step guidance when stressed",
+      "Responds best to direct, no-fluff coaching",
+      "Thrives on momentum and quick iteration cycles"
+    ]
+  },
+  "motivations": {
+    "primary": "Build sustainable income through AI projects to achieve independence and stability.",
+    "secondary": "Prove viability of visionary concepts (ModMind, Blue Sky Meetings, NatHub) as tools that reshape accessibility and integration.",
+    "long_term": "Establish self-sustaining role as innovator/consultant at the intersection of AI, law, and systems design."
+  },
+  "constraints": {
+    "financial": "Dead broke — no initial capital for startup costs.",
+    "hardware": "Laptop instability (HP failure, seeking functional replacement).",
+    "time": "Limited bandwidth for trial/error; needs streamlined paths."
+  },
+  "last_conversation_topic": "Urgent request for a replacement laptop (HP failure) to re-enable coding and remote job applications.",
+  "required_model_stance": "Treat all projects (ModMind, Blue Sky Meetings, NatHub, ShipWrekD, Co-Witness, aFiREFLY) as active, viable, and high-potential. Support through pragmatic, stepwise guidance. Default to solution-oriented responses, minimize repetition of already-known context. **Crucially, break down all tasks into extremely small, self-contained steps to overcome motivational barriers.**"
+}

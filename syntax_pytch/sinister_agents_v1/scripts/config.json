@@ -1,0 +1,11 @@
+{
+    "simulation_count": 5,
+    "health_threshold": 50,
+    "api_keys": {
+        "x_api": null,
+        "openai_api": null
+    },
+    "distributed_nodes": 3,
+    "swarm_size": 4,
+    "orchestration_timeout": 60
+}

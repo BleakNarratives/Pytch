@@ -1,0 +1,40 @@
+==================================================
+5TR8D0P3 DOCUMENTATION FILE
+SOURCE FILE: pytch_online_free.py
+FULL PATH: /storage/ED7B-AD5A/root_2026/YOU-ARE-HERE/Unfinished-Projects/Pytch/pytch_online_free.py
+==================================================
+
+[INTENT AND PURPOSE (THE FEET)]
+#!/usr/bin/env python3
+
+[FUNCTIONAL BREAKDOWN]
+
+--- class PytchOnlineFree:
+"""Uses only free public APIs"""
+
+--- def __init__(self):
+"""Initialize database"""
+
+--- def init_db(self):
+"""Initialize database"""
+
+--- def fetch_company_data_free(self, company_name: str) -> Dict:
+"""Fetch company data from free public sources"""
+
+--- def generate_cold_email(self, company_data: Dict, pain_points: str) -> Dict[str, str]:
+"""Generate cold email based on fetched data"""
+
+--- def create_lead(self, company: str, pain_points: str = "General inquiry",
+"""Create lead with online data"""
+
+--- def queue_email(self, lead_id: int, subject: str, body: str) -> bool:
+"""Queue email"""
+
+--- def get_metrics(self) -> Dict:
+"""Get campaign metrics"""
+
+--- def list_leads(self) -> List[Dict]:
+"""List all leads"""
+
+--- def main():
+"""Main entry point"""
