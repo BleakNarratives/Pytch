@@ -33,5 +33,5 @@ class Agent6(Agent):  # Assuming base from prior script
         return leads
 
 # Usage in execute_task:
-if task == "skip_trace":
-    return self.trace_cascade(env, target_seed="John Doe")
+# if task == "skip_trace":
+#     return self.trace_cascade(env, target_seed="John Doe")

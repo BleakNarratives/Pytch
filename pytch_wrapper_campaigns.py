@@ -225,11 +225,20 @@ P.S. Limited time offer - early adopter pricing available."""
         
         # Create sample lead and outreach
         with self._get_connection() as conn:
-            # Insert sample lead
-            lead_id = conn.execute(
-                "INSERT INTO leads (company, contact_name, email, source, industry, pain_points, priority) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                ("Example Company", "Decision Maker", "decision@example.com", "pytch", "Technology", "Needs better outreach", 100)
-            ).lastrowid
+            # Reuse the existing sample lead if present — leads.email is
+            # UNIQUE and hardcoding the same address made every generation
+            # after the first crash with IntegrityError.
+            lead = conn.execute(
+                "SELECT id FROM leads WHERE email = ?",
+                ("decision@example.com",)
+            ).fetchone()
+            if lead:
+                lead_id = lead["id"]
+            else:
+                lead_id = conn.execute(
+                    "INSERT INTO leads (company, contact_name, email, source, industry, pain_points, priority) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    ("Example Company", "Decision Maker", "decision@example.com", "pytch", "Technology", "Needs better outreach", 100)
+                ).lastrowid
             
             # Insert outreach with generated pitch
             conn.execute(
